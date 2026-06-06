@@ -85,8 +85,11 @@ Read `references/constructive_rules.md` when creating or changing modules. Criti
 - Edge banding is applied only on visible edges by default: the front-facing edge of floors, rails/fajas, sides, dividers, and shelves; all four edges on doors and drawer fronts.
 - Add side edge banding only when that side is visible, for example on islands or special exposed modules.
 - Cabinet backs are `3 mm` and always pass over the carcass, so export them at the module's full outside width and height.
-- Drawer box sides should maximize width and height while leaving at least `10 mm` from the cabinet bottom/underside face; allow `13 mm` clear each side for drawer slides.
-- Drawer bottoms are `5 mm` and use the full inside drawer-box footprint for stiffness.
+- Drawer box sides should maximize width and height while leaving at least `4 mm` above the lower edge of each drawer front; allow `13 mm` clear each side for drawer slides.
+- Drawer box heights should be equal within the same stack unless the project requests different drawer depths/heights.
+- Leave at least `4 mm` clearance below the lowest drawer box and above the highest drawer box; extra leftover clearance may go above the top drawer.
+- Drawer bottoms are `5 mm`, pass under the drawer box parts, and use the full outside drawer-box footprint so they can be nailed/screwed from below.
+- Drawer sides, trasfrente, and contrafrente need edge banding on their top edge because it is visible when the drawer opens.
 - No board part may have exported length or width under `50 mm`.
 - Countertop final height target: `900 mm`.
 - Tall module top alignment target: `2300 mm`.

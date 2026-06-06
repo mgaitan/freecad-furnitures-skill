@@ -61,7 +61,8 @@ Reusable dimensions are in `assets/gola/gola_profiles.json`; FreeCAD helper func
 - Apply edge banding only to visible edges by default.
 - For floors/bases, rails/fajas, side panels, dividers, and shelves, band the edge that faces the front of the cabinet.
 - Doors and drawer fronts receive edge banding on all four edges.
-- Interior drawer-box parts receive banding only on actually visible/handled edges requested by the project; do not mark all edges by default.
+- Drawer-box sides, trasfrente, and contrafrente receive edge banding on the top edge because it is visible when the drawer opens.
+- Other interior drawer-box edges receive banding only on actually visible/handled edges requested by the project; do not mark all edges by default.
 - Back panels, drawer bottoms, hidden supports, and stone pieces do not receive melamine edge banding.
 - In special modules where a side is visible, such as an island, peninsula, open side, or exposed end panel, also band the visible side edges.
 - Use `bom_cantos = front edge` for ordinary carcass members with only the front edge visible, and use a clear note such as `front and exposed left side` for exposed special cases.
@@ -87,9 +88,17 @@ Hinge reference image: `assets/bisagras.webp`.
 - Keep drawer box depth within slide length and behind the front/gola clearances.
 - A common drawer internal length in this project style is `500`.
 - Maximize drawer-box width for the selected bay while leaving `13 mm` clear on each side for the slides.
-- Maximize drawer-box height within the available front/opening while leaving at least `10 mm` from the cabinet bottom/underside face.
+- Each drawer box is laid out from its own drawer front: the drawer box bottom starts at least `10 mm` above that front's lower edge.
+- Drawer box heights should be equal within the same stack unless the project requests different drawer depths/heights.
+- Leave at least `4 mm` clearance below the lowest drawer box and above the highest drawer box relative to the carcass/base/rails.
+- Extra vertical leftover clearance may go above the top drawer; do not force the boxes to fill every front.
+- Maximize drawer-box height only within those constraints, keeping the drawer box fully behind its front unless the project specifies otherwise.
 - Drawer bottoms are `5 mm` for stiffness.
-- Drawer bottoms use the full inside drawer-box footprint; do not shrink them inside the drawer sides unless the chosen drawer system requires a groove/detail.
+- Drawer bottoms are pass-through/applied under the drawer box, not inset between drawer sides.
+- Drawer bottoms use the full outside drawer-box footprint so they can be nailed/screwed from below.
+- Drawer sides, trasfrente, and contrafrente sit on top of the pass-through drawer bottom.
+- Drawer sides, trasfrente, and contrafrente have the top edge banded because it is visible when open.
+- Do not shrink drawer bottoms inside the drawer sides unless the chosen drawer system explicitly requires a groove/detail.
 - Record the true drawer-bottom thickness in metadata.
 - False fronts and drawer fronts are supplier parts with edge metadata.
 
@@ -113,7 +122,10 @@ Hinge reference image: `assets/bisagras.webp`.
 - Door hinge cups are marked and counted in metadata.
 - Cabinet backs are `3 mm` and exported at full outside carcass dimensions.
 - Drawer boxes leave `13 mm` slide clearance per side.
-- Drawer bottoms are `5 mm` and use the full inside drawer footprint.
+- Drawer boxes are vertically aligned to their own drawer fronts.
+- Drawer stacks keep equal box heights by default and at least `4 mm` clearance above/below the stack.
+- Drawer bottoms are `5 mm`, pass-through under the drawer box, and use the full outside drawer-box footprint.
+- Drawer-box sides, trasfrente, and contrafrente have top-edge banding.
 - Hardware, previews, and references are excluded.
 - Gola grip clearances are present.
 - Door/front formulas match the chosen overlay and reveal.

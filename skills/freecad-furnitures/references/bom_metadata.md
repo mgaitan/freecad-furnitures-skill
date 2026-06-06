@@ -35,9 +35,10 @@ bom_cazoleta_posiciones     human-readable drilling positions, for example "righ
 - `bom_include = false` for hardware, previews, references, measuring helpers, installation guides, and non-cut objects.
 - Stone countertops, backsplashes, bars, and stone side caps use `bom_material = gray mara stone` and are excluded from melamine supplier TSVs.
 - Cabinet backs use `bom_material = back panel 3mm`, `bom_espesor_mm = 3`, and full outside carcass width/height because backs are pass-through over the carcass.
-- Drawer bottoms use `bom_material = drawer bottom 5mm`, `bom_espesor_mm = 5`, and the full inside drawer-box footprint.
+- Drawer bottoms use `bom_material = drawer bottom 5mm`, `bom_espesor_mm = 5`, and the full outside drawer-box footprint because they are pass-through/applied under the drawer box.
 - For ordinary carcass pieces, set edge flags only for the visible front edge and write `bom_cantos = front edge`.
 - Doors and drawer fronts receive all four edge flags.
+- Drawer-box sides, trasfrente, and contrafrente receive only the top-edge flag by default because that edge is visible when the drawer opens.
 - Do not edge-band hidden backs, drawer bottoms, hidden supports, or non-melamine/stone pieces.
 - Add extra side edge flags only for exposed sides in special modules such as islands or visible end panels.
 - Door cazoletas/hinge cups are drilling metadata on the door object, not separate board parts.
