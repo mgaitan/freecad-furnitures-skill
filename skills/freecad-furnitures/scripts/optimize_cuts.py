@@ -80,6 +80,7 @@ def infer_group(path: Path) -> str:
     groups = {
         "white_18mm": "white_18mm",
         "back_3mm": "back_3mm",
+        "drawer_bottom_5mm": "drawer_bottom_5mm",
         "back_6mm": "back_6mm",
         "wood_18mm": "wood_18mm",
     }

@@ -95,6 +95,10 @@ def infer_material_group(category: str, piece: str, thickness: float) -> str:
     key = f"{category} {piece}"
     if "wood" in key.lower():
         return "wood_18mm"
+    if abs(thickness - 5.0) <= 0.6 and (
+        "drawer" in key.lower() or "cajon" in key.lower() or "fondo" in key.lower()
+    ):
+        return "drawer_bottom_5mm"
     if abs(thickness - 3.0) <= 0.6:
         return "back_3mm"
     if abs(thickness - 6.0) <= 0.6:

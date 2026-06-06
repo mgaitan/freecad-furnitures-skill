@@ -3,11 +3,19 @@
   "units": "mm",
   "defaults": {
     "material_thickness": 18,
+    "front_half_edge_overlap": 9,
+    "min_front_meeting_reveal": 3,
     "carcass_height": 870,
     "plinth_height": 80,
     "depth": 580,
     "top_support_depth": 100,
     "drawer_box_depth": 500,
+    "slide_side_clearance": 13,
+    "min_drawer_bottom_clearance": 10,
+    "cabinet_back_thickness": 3,
+    "drawer_bottom_thickness": 5,
+    "hinge_cup_diameter": 35,
+    "hinge_cup_center_from_top_bottom": 90,
     "gola_clearance": 26
   },
   "parts": [
@@ -18,9 +26,20 @@
     "rear_top_support",
     "drawer_fronts",
     "drawer_boxes",
-    "back_panel_optional"
+    "back_panel"
   ],
   "notes": [
+    "Whenever possible, the bottom/base panel passes under the side panels at full outside width.",
+    "Interior dividers stay inside the carcass between base/top members.",
+    "Use half-edge overlay fronts with up to 9 mm overlap per adjacent carcass edge.",
+    "Leave at least 3 mm reveal where two fronts meet over the same carcass edge.",
+    "Band only visible edges by default: front edge on carcass members and all four edges on doors/drawer fronts.",
+    "Add side edge banding only when a side is visible, such as islands or exposed end panels.",
+    "Mark and count 35 mm hinge cup drilling on doors.",
+    "Cabinet backs are 3 mm and pass over the carcass at full outside module width and height.",
+    "Maximize drawer box width with 13 mm slide clearance on each side.",
+    "Maximize drawer box height while leaving at least 10 mm from the cabinet bottom/underside face.",
+    "Drawer bottoms are 5 mm and use the full inside drawer-box footprint.",
     "Place top supports inside the carcass.",
     "Keep visible front heights aligned to neighboring gola lines.",
     "Export every front, rail, side, drawer box member, and back panel as individual objects."

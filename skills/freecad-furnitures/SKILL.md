@@ -64,6 +64,10 @@ bom_canto_izq
 bom_canto_der
 bom_canto_sup
 bom_canto_inf
+bom_cantos
+bom_cazoleta_diametro_mm
+bom_cazoleta_cantidad
+bom_cazoleta_posiciones
 ```
 
 Read `references/bom_metadata.md` before exporting or repairing supplier data.
@@ -74,12 +78,24 @@ Read `references/constructive_rules.md` when creating or changing modules. Criti
 
 - Units are millimeters.
 - Default melamine thickness is `18 mm`.
+- Whenever possible, cabinet bottom/base panels pass under the side panels at full outside width; side panels sit on the base.
+- Interior dividers stay inside the carcass between base/top members; they are not pass-through exterior pieces unless specifically requested.
+- Doors and drawer fronts are half-edge overlay fronts: use up to `9 mm` overlap over each adjacent carcass edge.
+- Keep at least `3 mm` reveal where two fronts meet over the same carcass edge.
+- Edge banding is applied only on visible edges by default: the front-facing edge of floors, rails/fajas, sides, dividers, and shelves; all four edges on doors and drawer fronts.
+- Add side edge banding only when that side is visible, for example on islands or special exposed modules.
+- Cabinet backs are `3 mm` and always pass over the carcass, so export them at the module's full outside width and height.
+- Drawer box sides should maximize width and height while leaving at least `10 mm` from the cabinet bottom/underside face; allow `13 mm` clear each side for drawer slides.
+- Drawer bottoms are `5 mm` and use the full inside drawer-box footprint for stiffness.
 - No board part may have exported length or width under `50 mm`.
 - Countertop final height target: `900 mm`.
 - Tall module top alignment target: `2300 mm`.
 - In gola fronts, leave `26 mm` clear grip space.
-- Prefer half-overlay doors: each door width is `total including carcass sides / 2 - 22`.
-- For common half-cranked concealed hinges use a `35 mm` cup, center `90 mm` from top/bottom door edges and about `2 mm` from the door edge reference used by the hinge system.
+- Default hinges are concealed `codo 0`; leave at least `3 mm` reveal from the cabinet edge even though the hinge can go to zero.
+- If `codo 9` is requested, leave exactly `9 mm` reveal.
+- If `codo 18` is requested, doors go inside the carcass, flush with the front plane, and are `2 mm` smaller than the inside opening.
+- Use `codo 9` when hinges must mount on a divider shared by two hinged doors, such as the middle door in a three-door wall cabinet.
+- Mark and count hinge cup drilling on doors. Default concealed hinge cups are `35 mm`, two cups centered `90 mm` from top/bottom; add a third centered cup on tall doors such as wardrobe doors.
 
 ## Supplier TSV And Cut Optimization
 

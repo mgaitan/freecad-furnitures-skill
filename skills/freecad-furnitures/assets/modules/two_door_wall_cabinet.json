@@ -4,7 +4,11 @@
   "defaults": {
     "material_thickness": 18,
     "depth": 300,
-    "door_width_formula": "total_width_including_carcass_sides / 2 - 22",
+    "default_hinge_codo": 0,
+    "default_hinge_reveal": 3,
+    "codo_9_reveal": 9,
+    "codo_18_inset_deduction": 2,
+    "door_width_formula": "respect hinge codo/reveal and front meeting reveals",
     "hinge_cup_diameter": 35,
     "hinge_cup_center_from_top_bottom": 90,
     "hinge_cup_edge_offset": 2
@@ -20,7 +24,9 @@
     "right_door"
   ],
   "notes": [
-    "Prefer half-overlay doors.",
+    "Default hinges are codo 0 with at least 3 mm reveal from the cabinet edge.",
+    "Use codo 9 with exactly 9 mm reveal when requested or when hinges mount on a divider shared by two hinged doors.",
+    "Use codo 18 for inset doors: door inside the carcass, flush to the front, 2 mm smaller than the inside opening.",
     "Keep top crown alignment consistent with adjacent tall modules.",
     "Record visible door edges in BOM metadata."
   ]

@@ -20,7 +20,10 @@ class DoorPair:
     total_width: float
     door_width: float
     door_height: float
+    hinge_codo: int
+    hinge_reveal: float
     hinge_cup_diameter: float
+    hinge_cup_count: int
     hinge_centers_from_bottom: list[float]
     hinge_edge_offset: float
 
@@ -50,14 +53,27 @@ def validate_board(name: str, largo: float, ancho: float) -> None:
 
 
 def calc_door_pair(args: argparse.Namespace) -> DoorPair:
+    if args.hinge_codo == 0:
+        hinge_reveal = max(args.reveal, 3.0)
+    elif args.hinge_codo == 9:
+        hinge_reveal = 9.0
+    elif args.hinge_codo == 18:
+        hinge_reveal = args.inset_deduction
+    else:
+        raise SystemExit("--hinge-codo must be one of: 0, 9, 18")
     door_width = args.total_width / 2.0 - args.overlay_deduction
     validate_board("door", args.door_height, door_width)
     centers = [args.hinge_from_edge, args.door_height - args.hinge_from_edge]
+    if args.door_height >= args.extra_center_hinge_from_height:
+        centers.insert(1, args.door_height / 2.0)
     return DoorPair(
         total_width=args.total_width,
         door_width=round(door_width, 2),
         door_height=args.door_height,
+        hinge_codo=args.hinge_codo,
+        hinge_reveal=round(hinge_reveal, 2),
         hinge_cup_diameter=args.hinge_cup_diameter,
+        hinge_cup_count=len(centers),
         hinge_centers_from_bottom=[round(v, 2) for v in centers],
         hinge_edge_offset=args.hinge_edge_offset,
     )
@@ -87,10 +103,14 @@ def main() -> int:
     doors = sub.add_parser("door-pair", help="Calculate a half-overlay door pair.")
     doors.add_argument("--total-width", type=positive, required=True)
     doors.add_argument("--door-height", type=positive, required=True)
+    doors.add_argument("--hinge-codo", type=int, choices=(0, 9, 18), default=0)
+    doors.add_argument("--reveal", type=positive, default=3.0)
+    doors.add_argument("--inset-deduction", type=positive, default=2.0)
     doors.add_argument("--overlay-deduction", type=positive, default=22.0)
     doors.add_argument("--hinge-cup-diameter", type=positive, default=35.0)
     doors.add_argument("--hinge-from-edge", type=positive, default=90.0)
     doors.add_argument("--hinge-edge-offset", type=positive, default=2.0)
+    doors.add_argument("--extra-center-hinge-from-height", type=positive, default=1800.0)
 
     base = sub.add_parser("base-carcass", help="Calculate common base carcass panels.")
     base.add_argument("--width", type=positive, required=True)
