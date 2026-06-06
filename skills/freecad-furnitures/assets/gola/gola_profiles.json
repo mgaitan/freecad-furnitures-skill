@@ -1,0 +1,24 @@
+{
+  "units": "mm",
+  "clear_grip_space": 26,
+  "profiles": {
+    "J": {
+      "total_height": 48,
+      "depth": 24.4,
+      "thickness": 2,
+      "typical_use": "single grip below countertop or upper drawer/front line"
+    },
+    "J_inverted": {
+      "total_height": 48,
+      "depth": 24.4,
+      "thickness": 2,
+      "typical_use": "inverted single grip"
+    },
+    "C": {
+      "total_height": 72.8,
+      "depth": 26,
+      "thickness": 2,
+      "typical_use": "double grip between stacked fronts"
+    }
+  }
+}

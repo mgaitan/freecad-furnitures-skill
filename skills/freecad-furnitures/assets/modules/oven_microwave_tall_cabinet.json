@@ -1,0 +1,28 @@
+{
+  "name": "oven_microwave_tall_cabinet",
+  "units": "mm",
+  "defaults": {
+    "material_thickness": 18,
+    "total_height": 2300,
+    "base_plinth_height": 80,
+    "depth": 580,
+    "oven_visible_opening": "600x600",
+    "door_width_formula_for_pairs": "total_width_including_carcass_sides / 2 - 22"
+  },
+  "parts": [
+    "tall_sides",
+    "lower_body",
+    "oven_supports",
+    "microwave_shelf",
+    "upper_body",
+    "horizontal_thickeners",
+    "vertical_thickeners",
+    "doors",
+    "adjustable_shelves"
+  ],
+  "notes": [
+    "Keep appliance voids manufacturer-specific.",
+    "Use thickeners to resolve front visual planes around appliances.",
+    "Verify ventilation and clearances against appliance manuals."
+  ]
+}

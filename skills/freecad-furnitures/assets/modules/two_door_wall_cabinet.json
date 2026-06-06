@@ -1,0 +1,27 @@
+{
+  "name": "two_door_wall_cabinet",
+  "units": "mm",
+  "defaults": {
+    "material_thickness": 18,
+    "depth": 300,
+    "door_width_formula": "total_width_including_carcass_sides / 2 - 22",
+    "hinge_cup_diameter": 35,
+    "hinge_cup_center_from_top_bottom": 90,
+    "hinge_cup_edge_offset": 2
+  },
+  "parts": [
+    "left_side",
+    "right_side",
+    "floor",
+    "top",
+    "shelves_optional",
+    "back_panel",
+    "left_door",
+    "right_door"
+  ],
+  "notes": [
+    "Prefer half-overlay doors.",
+    "Keep top crown alignment consistent with adjacent tall modules.",
+    "Record visible door edges in BOM metadata."
+  ]
+}

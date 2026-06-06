@@ -1,0 +1,28 @@
+{
+  "name": "base_drawer_cabinet",
+  "units": "mm",
+  "defaults": {
+    "material_thickness": 18,
+    "carcass_height": 870,
+    "plinth_height": 80,
+    "depth": 580,
+    "top_support_depth": 100,
+    "drawer_box_depth": 500,
+    "gola_clearance": 26
+  },
+  "parts": [
+    "left_side",
+    "right_side",
+    "floor",
+    "front_top_support",
+    "rear_top_support",
+    "drawer_fronts",
+    "drawer_boxes",
+    "back_panel_optional"
+  ],
+  "notes": [
+    "Place top supports inside the carcass.",
+    "Keep visible front heights aligned to neighboring gola lines.",
+    "Export every front, rail, side, drawer box member, and back panel as individual objects."
+  ]
+}
