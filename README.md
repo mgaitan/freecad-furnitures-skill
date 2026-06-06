@@ -98,9 +98,9 @@ Use without installing:
 npx skills use mgaitan/freecad-furnitures-skill --skill freecad-furnitures
 ```
 
-## About `uvx`
+## Run Bundled Tools
 
-This skill is not a Python package. The CLI tools bundled inside the skill use PEP 723 headers and can be run with `uv run --script` after the skill is installed, but installation itself should use `gh skill install` or `npx skills`.
+CLI tools bundled inside the skill use PEP 723 headers and can be run with `uv run --script`.
 
 Examples:
 
